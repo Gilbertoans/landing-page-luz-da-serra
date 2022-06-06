@@ -1,0 +1,123 @@
+@import url('https://fonts.googleapis.com/css2?family=Arimo:wght@700&display=swap');
+
+:root{
+  --primary:#d9593d;
+  --hover-width: 75%;
+  --other-width:25%;
+  --speed: 1000ms;
+}
+
+
+*{
+  box-sizing: border-box;
+}
+
+body{
+  font-family: 'Arimo', sans-serif;
+  height: 100vh;
+  overflow: hidden;
+  margin: 0;
+}
+
+h1{
+  font-size: 4rem;
+  color: #fff;
+  position: absolute;
+  left: 50%;
+  top: 5%;
+  transform: translateX(-50%);
+  white-space: nowrap;
+  font-size: 2rem;
+
+}
+
+.btn{
+  position: absolute;
+  border-radius: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  left: 50%;
+  top: 88%;
+  transform: translateX(-50%);
+  text-decoration: none;
+  color: #fff;
+  border: #fff solid 0.2rem;
+  background-color: var(--primary);
+  font-size: 1.3rem;
+  font-weight: bold;
+  text-transform: uppercase;
+  width: 15rem;
+  padding: 1.5rem;
+
+}
+
+.container {
+  position: relative;
+  width: 100vw;
+  height: 100vh;
+  background-color: #333;
+
+}
+
+.split {
+  position: absolute;
+  width:50%;
+  height: 100%;
+  overflow: hidden;
+}
+
+.split.left{
+  left: 0;
+ background: url(img/img1.png) no-repeat;
+  background-size: cover;
+}
+
+
+
+
+.btn:hover{
+  color: var(--primary);
+  background-color: #fff;
+  border-color: var(--primary);
+}
+
+.split.right{
+ right: 0;
+  background: url(img/img2.png) no-repeat;
+  background-size: cover;
+}
+
+.hover-left .left{
+  width: var(--hover-width);
+}
+
+.hover-left .right {
+  width: var(--other-width);
+}
+
+.hover-right .right{
+  width: var(--hover-width);
+}
+
+.hover-right .left {
+  width: var(--other-width);
+}
+
+.split.right, .split.left{
+  transition: all var(--speed) ease-in-out;
+
+}
+
+@media (max-width: 800px){
+  h1 {
+    font-size: 1rem;
+    top: 5%;
+   text-align: center;
+  }
+
+  .btn{
+    padding: 1.2rem;
+    width: 12rem;
+  }
+}
